@@ -66,6 +66,7 @@
 	</div>
         <input type="text" name="id" placeholder="이메일 입력" autofocus value=${cookie.id.value}>
         <input type="password" name="pwd" placeholder="비밀번호">
+        <input type="text" name="toURL">
         <button>로그인</button>
         <div>
             <label><input type="checkbox" name="rememberId" ${empty cookie.id.value? "":"checked"} }checked> 아이디 기억</label> |
