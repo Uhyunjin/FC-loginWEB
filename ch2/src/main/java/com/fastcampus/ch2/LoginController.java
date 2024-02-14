@@ -61,6 +61,7 @@ public class LoginController {
 //		toURL값이 제대로 넘어오지 않으면 "/"홈으로, 값이 넘어오면 toURL값 그대로
 		
 		return "redirect:"+toURL;
+		// 여기서 "/"는 뺴주어야한다
 	}
 	private boolean loginCheck(String id, String pwd) {
 		// TODO Auto-generated method stub
