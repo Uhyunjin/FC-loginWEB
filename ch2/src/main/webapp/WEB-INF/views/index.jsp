@@ -1,7 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page sesseion="false" %>
 <c:set var="loginoutLink" value="${sessionScope.id==null ? '/login/login' : '/login/logout'}"/>
 <c:set var="loginout" value="${sessionScope.id==null ? 'Login' : 'Logout' }"/>
+
 
 <!DOCTYPE html>
 <html>
