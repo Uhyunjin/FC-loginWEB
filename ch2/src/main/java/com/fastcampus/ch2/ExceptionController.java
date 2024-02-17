@@ -7,7 +7,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class ExceptionController {
 	@RequestMapping("/ex")
 	public void main() throws Exception{
-		throw new Exception("예외가 발생했습니다.");
+		try {
+			throw new Exception("예외가 발생했습니다.");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }
