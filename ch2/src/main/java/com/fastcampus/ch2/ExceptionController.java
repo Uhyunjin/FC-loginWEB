@@ -10,18 +10,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class ExceptionController {
 	
-	@ExceptionHandler(NullPointerException.class)
+	@ExceptionHandler({NullPointerException.class, FileNotFoundException.class})
+	// 여러개의 예외를 하나의 클래스에 담을 땐 맵 형태로 받는다
 	public String catcher2(Exception ex, Model m) {
 		m.addAttribute("ex", ex);
 		return "error";
 	}
-	@ExceptionHandler(Exception.class)
-	public String catcher(Exception ex, Model m) {
-		m.addAttribute("ex", ex);
-		return "error";
-	}
-	//메서드가 여러개일 때 try-catch 코드가 중복되므로 별도로 예외처리 메서드를 추가해준다+exceptionhandler어노테이션
-	
+//	@ExceptionHandler(Exception.class)
+//	public String catcher(Exception ex, Model m) {
+//		m.addAttribute("ex", ex);
+//		return "error";
+//	}	
 	
 	@RequestMapping("/ex")
 	public String main() throws Exception{
@@ -32,7 +31,6 @@ public class ExceptionController {
 	public String main2() throws Exception{
 			throw new FileNotFoundException("예외가 발생했습니다.");
 			//FileNotFoundException 발생
-			//그러나 해당 예외 처리 메서드가 없어서 exception(최고조상)이 처리
 	}
 
 }
